@@ -15,7 +15,7 @@ const app=express();
 const db_key = process.env.MONGO_URI;
 
 //MongoDb Connection
-mongoose.connect(db_key,(err)=>{
+mongoose.connect("mongodb+srv://21ucs097:test@cluster0.yelia6t.mongodb.net/?retryWrites=true&w=majority",(err)=>{
     if(err) {throw err;}
     console.log('connected to mongodb')
 })
