@@ -10,8 +10,10 @@ const adminRoutes=require("./routes/Admin.js");
 dotenv.config();
 const app=express();
 
+const db_key = process.env.MONGO_URI;
+
 //MongoDb Connection
-mongoose.connect("mongodb+srv://21ucs097:test@cluster0.yelia6t.mongodb.net/?retryWrites=true&w=majority",(err)=>{
+mongoose.connect(db_key,(err)=>{
     if(err) {throw err;}
     console.log('connected to mongodb')
 })
@@ -29,7 +31,7 @@ app.get("/",(req,res)=>{
     res.send("welcome to home page")
 })
 
-const port = process.env.PORT || 8080;
+const port = 8080;
 app.listen(port,()=>{
     console.log(`Server started on http://localhost:${port}/`);
 })
