@@ -7,7 +7,9 @@ const authRoutes=require("./routes/auth.js");
 const userRoutes=require("./routes/Users.js");
 const adminRoutes=require("./routes/Admin.js");
 
-dotenv.config();
+if(process.env.NODE_ENV !== "production") {
+    require('dotenv').config();
+}
 const app=express();
 
 const db_key = process.env.MONGO_URI;
