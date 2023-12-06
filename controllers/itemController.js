@@ -114,7 +114,7 @@ exports.addItem = async (req, res) => {
 exports.toInventory = (req, res) => {
     const item_name = req.params.item_name;
     console.log(item_name);
-    Item.findOneAndUpdate({name: item_name}, { $inc: { issued_count: -1 } }, function (err, doc) {
+    Item.findOneAndUpdate(item_name, { $inc: { issued_count: -1 } }, function (err, doc) {
         if (err) {
             res.status(404).json({ error: err })
         }
