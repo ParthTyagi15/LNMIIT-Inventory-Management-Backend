@@ -75,16 +75,16 @@ exports.searchByOrderDate = function (req, res) {
 }
 
 //Getting Recent Orders: to be display in user dashboard
-exports.recentOrder = (req, res) => {
-    const user_id = req.params.userId
-    var query = { order_date: -1 }; // we have to take the item_id of the item which we want to add into inventory. 
-    Order.find({ user_id: user_id }).sort(query).exec(function (err, result) {
-        if (err)
-            throw err;
-        //console.log(result);
-        res.status(200).send({ order: result[0] ?? ({}) });
-    });
-}
+// exports.recentOrder = (req, res) => {
+//     const user_id = req.params.userId
+//     var query = { order_date: -1 }; // we have to take the item_id of the item which we want to add into inventory. 
+//     Order.find({ user_id: user_id }).sort(query).exec(function (err, result) {
+//         if (err)
+//             throw err;
+//         //console.log(result);
+//         res.status(200).send({ order: result[0] ?? ({}) });
+//     });
+// }
 
 
 

@@ -6,7 +6,7 @@ const {orderHistoryUser,orderItem,recentOrder} =require("../controllers/orderCon
 
 
 //1.Dashboard Route
-router.get("/dashboard/:userId",recentOrder);
+// router.get("/dashboard/:userId",recentOrder);
 
 //1. Order-Items Route
 router.post("/orderItem",orderItem)

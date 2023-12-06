@@ -33,12 +33,12 @@ router.post("/issueItem", issueItem);
 router.post("/addItem", addItem);
 router.get("/searchItem/:itemId", searchItem);
 
-router.get("/fsn1", FSN1);
-router.get("/fsn2", FSN2);
+// router.get("/fsn1", FSN1);
+// router.get("/fsn2", FSN2);
 router.patch("/toInventory/:item_name", toInventory);
 
-router.get("/C", itemCost1);
-router.get("/B", itemCost2);
-router.get("/A", itemCost3);
+// router.get("/C", itemCost1);
+// router.get("/B", itemCost2);
+// router.get("/A", itemCost3);
 
 module.exports = router;

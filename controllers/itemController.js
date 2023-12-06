@@ -2,30 +2,30 @@ const User = require("../models/User.js");
 const Item = require("../models/Item.js");
 const mongoose = require("mongoose")
 
-exports.FSN1 = (req, res) => {
-    var query1 = { date_purchased: { $lt: new Date((new Date()) - 43800 * 60 * 60 * 1000) } }; // we have to take the item_id of the item which we want to add into inventory. 
-    Item.find(query1, function (err, foundItems) {
-        if (!err) {
-            res.status(200).json({ items: foundItems });
-        }
-        else {
-            res.send(err);
-        }
-    })
+// exports.FSN1 = (req, res) => {
+//     var query1 = { date_purchased: { $lt: new Date((new Date()) - 43800 * 60 * 60 * 1000) } }; // we have to take the item_id of the item which we want to add into inventory. 
+//     Item.find(query1, function (err, foundItems) {
+//         if (!err) {
+//             res.status(200).json({ items: foundItems });
+//         }
+//         else {
+//             res.send(err);
+//         }
+//     })
 
-}
+// }
 
-exports.FSN2 = (req, res) => {
-    var query2 = { date_purchased: { $lt: new Date((new Date()) - 2 * 43800 * 60 * 60 * 1000) } }; // we have to take the item_id of the item which we want to add into inventory. 
-    Item.find(query2, function (err, foundItems) {
-        if (!err) {
-            res.status(200).json({ items: foundItems });
-        }
-        else {
-            res.send(err);
-        }
-    })
-}
+// exports.FSN2 = (req, res) => {
+//     var query2 = { date_purchased: { $lt: new Date((new Date()) - 2 * 43800 * 60 * 60 * 1000) } }; // we have to take the item_id of the item which we want to add into inventory. 
+//     Item.find(query2, function (err, foundItems) {
+//         if (!err) {
+//             res.status(200).json({ items: foundItems });
+//         }
+//         else {
+//             res.send(err);
+//         }
+//     })
+// }
 exports.inventory = (req, res) => {
     Item.find((err, items) => {
         if (!err) {
@@ -74,42 +74,42 @@ exports.addItem = async (req, res) => {
 }
 
 
-exports.itemCost1 = (req, res) => {
-    query = { expected_cost: { $lt: 10000 } }
-    Item.find(query, function (err, foundItems) {
-        if (err) {
-            res.status(404).json({ error: err })
-        }
-        else {
-            res.status(200).json({ items: foundItems })
-        }
-    })
+// exports.itemCost1 = (req, res) => {
+//     query = { expected_cost: { $lt: 10000 } }
+//     Item.find(query, function (err, foundItems) {
+//         if (err) {
+//             res.status(404).json({ error: err })
+//         }
+//         else {
+//             res.status(200).json({ items: foundItems })
+//         }
+//     })
 
-}
-exports.itemCost2 = (req, res) => {
-    query = { expected_cost: { $lt: 100000, $gt: 10000 } }
-    Item.find(query, function (err, foundItems) {
-        if (err) {
-            res.status(404).json({ error: err })
-        }
-        else {
-            res.status(200).json({ items: foundItems })
-        }
-    })
+// }
+// exports.itemCost2 = (req, res) => {
+//     query = { expected_cost: { $lt: 100000, $gt: 10000 } }
+//     Item.find(query, function (err, foundItems) {
+//         if (err) {
+//             res.status(404).json({ error: err })
+//         }
+//         else {
+//             res.status(200).json({ items: foundItems })
+//         }
+//     })
 
-}
-exports.itemCost3 = (req, res) => {
-    query = { expected_cost: { $gt: 100000 } }
-    Item.find(query, function (err, foundItems) {
-        if (err) {
-            res.status(404).json({ error: err })
-        }
-        else {
-            res.status(200).json({ items: foundItems })
-        }
-    })
+// }
+// exports.itemCost3 = (req, res) => {
+//     query = { expected_cost: { $gt: 100000 } }
+//     Item.find(query, function (err, foundItems) {
+//         if (err) {
+//             res.status(404).json({ error: err })
+//         }
+//         else {
+//             res.status(200).json({ items: foundItems })
+//         }
+//     })
 
-}
+// }
 
 exports.toInventory = (req, res) => {
     const item_name = req.params.item_name;
