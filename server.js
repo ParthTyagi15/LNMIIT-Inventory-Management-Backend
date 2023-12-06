@@ -30,7 +30,7 @@ app.use("/admin",adminRoutes)
 
 
 app.get("/",(req,res)=>{
-    res.send("welcome to home page")
+    res.send("Parth and Jaskaran")
 })
 
 const port = process.env.PORT || 8080;
